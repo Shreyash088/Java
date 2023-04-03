@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Metho21{
+    public static boolean checkPrime(int num){
+        for(int i=2;i<num;i++){
+            if(num%i==0){
+                return false;
+            }
+        } return true;
+
+    }
+    public static boolean checkTwin(int num){
+        int x=num+2;
+        if(checkPrime(x)){
+            return true;
+        }
+        return false;
+
+
+    }
+  
+    public static void main(String[]args){
+        Scanner sc=new Scanner (System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        
+
+        for(int i=x;i<=y;i++){
+            
+            if(checkPrime(i)){
+                if(checkTwin(i)){
+                    System.out.println("("+i+" "+(i+2)+")");                   
+                }
+            }
+        }
+    }
+}
