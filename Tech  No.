@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class method265{
+    public static void main(String[]args){
+        Scanner sc =new Scanner (System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        for (int i=x;i<=y;i++){
+            if(isTechNo(i)){
+                System.out.println(i);
+            }
+        }
+    }
+    public static int count(int num){
+        int ct=0;
+        while(num!=0){
+            ct++;
+            num/=10;
+        }return ct;
+    } 
+    public static int power(int base,int raise){
+        int pow=1;
+        for(int i=0;i<raise;i++){
+            pow*=base;
+        }
+        return pow;
+    }
+    public static boolean isTechNo(int num){
+        int ct=count(num);
+        int temp=num;
+        if(ct%2==0){
+            int x=0;
+            for(int i=0;i<(ct/2);i++){
+                 x=num%power(10,ct/2);
+            }
+            num=(num-x)/power(10,ct/2);
+            int sum=(x+num);
+            int sq=sum*sum;
+            if (sq==temp){
+                return true;
+            }
+        }return false;
+    }
+}
