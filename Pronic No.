@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class PronicNo{
+    public static boolean ispronic(int num){
+        boolean x=false;
+        for (int i=0;i<num;i++){
+            if(num==i*(i+1)){
+                x=true;
+                break;
+            }
+        }
+        if(x==true){
+            return true;
+        }return false;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        for (int i=x;i<=y;i++){
+            if(ispronic(i)){
+                System.out.println(i);
+            }
+        }
+    }
+}
