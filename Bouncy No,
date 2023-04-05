@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Methood2{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        for(int i=x;i<=y;i++){
+            if(isBouncy(i)){
+                System.out.println(i);
+            }
+        }
+
+    }
+    public static boolean isBouncy(int num){
+        boolean inc=false;
+        boolean dec=false;
+        while(num!=0){
+            int n1=num%10;
+            num/=10;
+            int n2=num%10;
+           
+            if (num==0){ break;}
+           
+            if(n1>n2){
+                dec=true;
+            }
+            else if(n2>n1){
+                inc =true;
+            }
+            if(inc==true && dec==true){
+                return true;
+            }
+        }return false;
+    }
+}
