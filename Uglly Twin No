@@ -18,7 +18,7 @@ class UgllyTwinNo{
         }
         return false;
     }
-public static boolean CheckTiwin(int num){
+public static boolean checkTiwin(int num){
     if(isUgly(num+2)){
         return true;
     }
@@ -30,7 +30,7 @@ public static boolean CheckTiwin(int num){
         int y=sc.nextInt();
         for(int i=x;i<=y;i++){
             if(isUgly(i)){
-                if(CheckTiwin(i))
+                if(checkTiwin(i))
                 System.out.println(i+","+(i+2));
             }
         }
