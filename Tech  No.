@@ -28,10 +28,7 @@ class method265{
         int ct=count(num);
         int temp=num;
         if(ct%2==0){
-            int x=0;
-            for(int i=0;i<(ct/2);i++){
-                 x=num%power(10,ct/2);
-            }
+            int x=num%power(10,ct/2);        
             num=(num-x)/power(10,ct/2);
             int sum=(x+num);
             int sq=sum*sum;
