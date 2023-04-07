@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class Sqrt{
+    public static double sqrt(int num){
+        int sq=1;
+        while(true){
+            if(sq*sq==num){
+                break;
+            }
+            else if(sq*sq<num){
+                sq++;
+            }
+            else if(sq*sq>num){
+                break;
+            }
+        }
+        if(sq*sq==num){
+            return sq;
+        }
+        else{
+            double after=(sq*sq)-num;
+            double before=num-((sq-1)*(sq-1));
+            double smallest=after<before?after:before;
+            if(after==smallest){
+                return sq-(after/(2*sq));
+            }
+            else{
+                sq--;
+                return sq+(before/(2*sq));
+            }
+        }
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        for (int i=x;i<=y;i++){
+            System.out.println(sqrt(i));
+        }
+    }
+}
