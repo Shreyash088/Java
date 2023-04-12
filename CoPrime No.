@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class CoPrimeNo{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        int hcf=x>y?x:y;
+        for(;;){                         //Infinity loop
+            if(x%hcf==0 && y%hcf==0){
+                System.out.println(hcf); 
+                break;
+            }
+            hcf--;
+        }
+        if(hcf==1){
+            System.out.println("It is coprime no.");
+        }
+    }
+}
